@@ -1,0 +1,3 @@
+Menggunakan Visual Studio Code, lalu menggunakan Live Server untuk menjalankan input API-nya.
+    - Install Live Server pada Visual Studio Code
+    - Buka file index.html, lalu 'open with live server'
