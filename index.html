@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pengumuman Pemenang Kompetisi MAPID</title>
+    <link rel="icon" href="asset/image/logo.png" type="image/icon type">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/font/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="vendor/font/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
+    <link href="style/responsive.css" rel="stylesheet">
+
+    <script src="vendor/jquery/jquery-3.5.0.js"></script>
+</head>
+
+<body>
+    <button class="btn btn-primary list-toggle">
+        <i class="fa fa-arrow-left" id="icon-toggle"></i>
+    </button>
+    <ul class="list-group" id="list-group">
+        <div id="bracket"></div>
+        <li class="list-group-item bg-primary text-white mt-4 sub_bracket" id="sub_teknis"></li>
+        <li class="list-group-item bg-primary text-white mt-4 sub_bracket" id="sub_achievement"></li>
+        <li class="list-group-item bg-primary text-white mt-4 sub_bracket" id="sub_partnership"></li>
+        <li class="list-group-item bg-primary text-white mt-4 sub_bracket" id="sub_news"></li>
+        <li class="list-group-item bg-primary text-white mt-4 sub_bracket" id="sub_seminar"></li>
+    </ul>
+    <div class="container-fluid p-0">
+        <div id="header">
+            <h1 id="title"><strong>Pengumuman Pemenang Kompetisi MAPID</strong></h1>
+        </div>
+        <div id="blur"></div>
+
+        <div class="container" id="main">
+            <div class="card">
+                <div class="card-header d-flex">
+                    <img src="asset/image/team.jpeg" id="team-img">
+                    <div class="justify-content-center align-self-center ml-3">
+                        <p class="mb-0">Team Mapid</p>
+                        <p class="mb-0"><small>Sep 30 2020</small></p>
+                    </div>
+                </div>
+                <div class="card-body">
+
+                    <img src="asset/image/header.png" class="mb-5" id="header2">
+
+                    <div id="content">
+                        <h2><strong>Selamat Kepada Para Pemenang!</strong></h2>
+                        <p>Halo teman-teman semua, terima kasih sudah berpartisipasi dalam ajang kompetisi
+                            menulis Blog mengenai pengalaman kalian menggunakan MAPID. kami sangat senang banyak
+                            sekali masukan dan saran untuk MAPID agar menjadi platform Geospasial buatan anak bangsa
+                            yang lebih baik lagi. Hari ini, kami akan mengumumkan pemenang kompetisi MAPID yang
+                            berhadiah total Rp.5.000.000.</p>
+                        <br>
+                        <p>
+                            Ini dia daftar pemenang kompetisi MAPID.
+                        </p>
+                        <br>
+                        <p>
+                            SELAMAT!
+                        </p>
+                        <div id="champion">
+                            <p><span>Juara 1: Muhamad Misykat Ali Al Mahdi</span></p>
+                            <a href="#">Pemetaan Trotoar Akses untuk Sahabat Netra di Kota Bandung</a>
+
+                            <p><span>Juara 2: Muhamad Iqbal Januadi Putra</span></p>
+                            <a href="#">Kuantifikasi Aksesibilitas Fasilitas Kesehatan dengan Metode 2-Step Floating
+                                Catchment Analysis (2SFCA)</a>
+
+                            <p><span>Juara 3: Mei Mustaqim</span></p>
+                            <a href="#">Survei Kualitas Air di Berbagai Daerah Berdasarkan Perilaku Masyarakat</a>
+                        </div>
+                        <h2 class="mt-5"><strong>Daftar penilaian untuk semua peserta</strong></h2>
+                        <p>Untuk kamu yang penasaran dengan nilai kamu, ini dia detail poinnya.</p>
+                        <img src="asset/image/poin.png" alt="poin" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript">
+    fetch('api.json').then(function (response) {
+        return response.json();
+    })
+        .then(function (data) {
+            appendData(data);
+        })
+        .catch(function (err) {
+            console.log('error: ' + err);
+        })
+
+    function appendData(data) {
+        let listgroup = document.getElementById("list-group");
+        let bracket = document.getElementById("bracket");
+
+        for (let i = 0; i < data.length; i++) {
+            bracket.innerHTML = data[i].bracket;
+            if (data[i].sub_bracket == "teknis_kompetisi_mapid") {
+                let list_sub_teknis = document.getElementById('sub_teknis');
+                list_sub_teknis.innerHTML = data[i].sub_bracket;
+
+                let div = document.createElement("div");
+                let a = document.createElement("a");
+                div.className = "list-group-item";
+                let att = document.createAttribute("href");
+                att.value = "#";
+                a.setAttributeNode(att);
+                a.innerHTML = data[i].title;
+                div.appendChild(a);
+                list_sub_teknis.after(div);
+
+            }
+
+            if (data[i].sub_bracket == "achievement") {
+                let list_sub_achievement = document.getElementById('sub_achievement');
+                list_sub_achievement.innerHTML = data[i].sub_bracket;
+
+                let div = document.createElement("div");
+                let a = document.createElement("a");
+                div.className = "list-group-item";
+                let att = document.createAttribute("href");
+                att.value = "#";
+                a.setAttributeNode(att);
+                a.innerHTML = data[i].title;
+                div.appendChild(a);
+                list_sub_achievement.after(div);
+
+            }
+
+            if (data[i].sub_bracket == "partnership") {
+                let list_sub_partnership = document.getElementById('sub_partnership');
+                list_sub_partnership.innerHTML = data[i].sub_bracket;
+
+                let div = document.createElement("div");
+                let a = document.createElement("a");
+                div.className = "list-group-item";
+                let att = document.createAttribute("href");
+                att.value = "#";
+                a.setAttributeNode(att);
+                a.innerHTML = data[i].title;
+                div.appendChild(a);
+                list_sub_partnership.after(div);
+
+            }
+
+            if (data[i].sub_bracket == "news") {
+                let list_sub_news = document.getElementById('sub_news');
+                list_sub_news.innerHTML = data[i].sub_bracket;
+
+                let div = document.createElement("div");
+                let a = document.createElement("a");
+                div.className = "list-group-item";
+                let att = document.createAttribute("href");
+                att.value = "#";
+                a.setAttributeNode(att);
+                a.innerHTML = data[i].title;
+                div.appendChild(a);
+                list_sub_news.after(div);
+
+            }
+            if (data[i].sub_bracket == "seminar") {
+                let list_sub_seminar = document.getElementById('sub_seminar');
+                list_sub_seminar.innerHTML = data[i].sub_bracket;
+
+                let div = document.createElement("div");
+                let a = document.createElement("a");
+                div.className = "list-group-item";
+                let att = document.createAttribute("href");
+                att.value = "#";
+                a.setAttributeNode(att);
+                a.innerHTML = data[i].title;
+                div.appendChild(a);
+                list_sub_seminar.after(div);
+            }
+        }
+    }
+
+    let $w = $(window).scroll(function () {
+        if ($w.scrollTop() > 200) {
+            $('.list-group').css({ "bottom": "0" });
+            $('.list-toggle').css({ "bottom": "525px" });
+        } else {
+            $('.list-group').css({ "bottom": "-400px" });
+            $('.list-toggle').css({ "bottom": "125px" });
+        }
+    });
+
+    $(document).ready(function () {
+        $(".list-toggle").click(function () {
+            $(".list-group").toggle();
+            $("#icon-toggle", this).toggleClass("fa fa-arrow-right fa fa-arrow-left");
+            if ($(".list-group").is(":hidden")) {
+                $('.list-toggle').css({ "left": "0" });
+            }
+            if ($(".list-group").is(":visible")) {
+                $('.list-toggle').css({ "left": "150px" });
+            }
+        });
+    });
+</script>
+
+</html>

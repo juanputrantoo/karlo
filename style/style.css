@@ -1,0 +1,141 @@
+::-webkit-scrollbar {
+    width: 13px;
+}
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+   
+::-webkit-scrollbar-thumb {
+    background: #dfe6e9;
+    border-radius: 30px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #0275d8; 
+}
+
+.list-toggle{
+    position: fixed;
+    bottom: 125px;
+    left: 150px;
+    border-radius: 50%;
+    z-index: 101;
+    transition: .7s;
+}
+
+.list-group{
+    width: auto;
+    height: 550px;
+    position: fixed;
+    z-index: 100;
+    bottom: -400px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #bdc3c7;
+    background-color: #dcdde1;
+    overflow-y: scroll;
+    transition: .7s;
+}
+
+.list-group .list-group-item{
+    font-size: 13px;
+    width: 250px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.list-group .list-group-item a{
+    color: #2d3436;
+}
+
+
+
+.list-group .sub_bracket, #bracket{
+    text-transform: uppercase;
+}
+
+#bracket{
+    text-align: center;
+    background-color: white;
+    color: black;
+    width: 100px;
+    border-radius: 20px;
+    padding: 10px;
+    margin: auto;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(138,138,138,1);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(138,138,138,1);
+    box-shadow: 0px 0px 20px 0px rgba(138,138,138,1);
+}
+
+
+/* HEADER */
+#header{
+    width: 100%;
+    height: 80vh;
+    background-image: url('../asset/image/header.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    overflow: hidden; 
+}
+
+#header h1{
+    position: absolute;
+    left: 0; bottom: 250px;
+    width: 100%;
+    text-align: center; color: black;
+    font-size: 4vw;
+}
+
+
+#blur{
+    position: absolute;
+    top: 440px;
+    width: 100%;
+    height: 100px;
+    background: white;
+    filter: blur(5px);
+}
+
+/* MAIN */
+
+#main .card{
+    margin: auto;
+    border: none;
+    width: 50%;
+}
+#main #header2{
+    width: 100%;
+    height: auto;
+}
+
+#main .card .card-header{
+    background-color: transparent;
+    border-bottom: none;
+}
+
+#main #team-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid gray;
+    -webkit-box-shadow: 0px 0px 10px 2px rgba(128,128,128,1);
+    -moz-box-shadow: 0px 0px 10px 2px rgba(128,128,128,1);
+    box-shadow: 0px 0px 10px 2px rgba(128,128,128,1);
+}
+
+
+
+#main #champion p{
+    text-decoration: underline;
+    text-align: left;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#main #champion p span{
+    background-color: #bdc3c7;
+}

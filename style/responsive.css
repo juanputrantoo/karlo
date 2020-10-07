@@ -1,0 +1,14 @@
+@media screen and (max-width: 992px) {
+    #main .card{
+        width: auto;
+    }
+    .list-toggle{
+        left: 0;
+    }
+    .list-group{
+        display: none;
+    }
+    #blur{
+        display: none;
+    }
+  }
